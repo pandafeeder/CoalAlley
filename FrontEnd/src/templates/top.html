@@ -1,0 +1,13 @@
+<div class="pure-g">
+<div id="nav" class="pure-u-1" ui-view='nav'></div>
+</div>
+<button id="ctableBTN" ng-click="ctableSwitch($event)"><i id="ctable-btn" class="fa fa-bars"></i></button>
+<div class="pure-g" id="wrapper">
+    <div id="placeholder" class="pure-u-lg-4-24"></div>
+    <div id="ctable" class="pure-u-md-6-24 pure-u-lg-4-24 " ui-view='ctable'></div>
+    <div id="content" class="pure-u-1 pure-u-md-18-24 pure-u-lg-12-24" ui-view='content'></div>
+    <div id="placeholder" class="pure-u-lg-4-24"></div>
+</div>
+<div ui-view="sidebar"></div>
+<div ui-view="login"></div>
+<div ui-view='foot'></div>

@@ -1,0 +1,400 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;    
+}
+
+body {
+    overflow-x: hidden;
+    /* overflow-y: hidden; */
+}
+
+#nav {
+    /* background: #0B1C2D; */
+    background: #213854;
+    height: 100px;
+    text-align: center;
+}
+#nav a {
+    font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
+    color: white;
+    font-size: 2em;
+    line-height: 100px;
+    text-decoration: none;
+    display: inline-block;
+    height: inherit;
+}
+#nav #menu {
+    float: right;
+    height: inherit;
+}
+#menu-i {
+    font-size: 40px;
+    color: #71C0E8;
+}
+
+/*this ensures sub element's alignment*/
+#wrapper {
+    font-size: 0px;
+}
+
+#content {
+}
+
+#content #title {
+    font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 16px;
+}
+#content #detail {
+    font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 16px;
+}
+#content #detail pre{
+    font-size: 13px;
+}
+#content #modified {
+    font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 16px;
+}
+
+#foot {
+    /* background: gray; */
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+}
+#foot a{
+    text-decoration: none;
+    font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
+}
+
+#cover {
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
+    width: 100%;
+    height: 100%;
+}
+
+#ctable-btn {
+    font-size:22px;
+    color:#71C0E8;
+}
+
+#ctable {
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
+    font-size: 16px;
+    background: rgba(128, 128, 128, 0.02);
+    z-index:2;
+}
+
+#ctable li {
+    list-style: none;
+    display: block;
+}
+#view-a {
+    text-decoration: none;
+    color:black;
+    width: 100%;
+    display: inline-block;
+    padding-left:2px;
+    padding-top:6px;
+    padding-bottom:6px;
+}
+#view-a:active{
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+#view-a:hover{
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);
+    background: #DCDCDC;
+    color:#EA940A;
+}
+#view-a:visited{
+    color:#6B1B16;
+}
+
+#edit-a {
+    padding-top:6px;
+    padding-bottom:6px;
+    float:right;
+    margin-right:10px;
+    display: inline-block;
+}
+#del-a {
+    padding-top:6px;
+    padding-bottom:6px;
+    float:right;
+    margin-right:10px;
+    display: inline-block;
+}
+
+
+#sidebar {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    /* background: rgba(86, 187, 150, 0.98); */
+    background: rgba(255, 165, 0, 0.98);
+    height: 100%;
+    width: 300px;
+    position: absolute;
+    top: 0px;
+    z-index: 1;
+}
+
+.slide{
+    -webkit-transition:all ease-out 0.5s; 
+    -moz-transition:all ease-out 0.5s;
+    -o-transition:all ease-out 0.5s;
+    transition:all ease-out 0.5s;
+    opacity:1;
+    position: absolute;
+    right: 0px;
+}
+.slide.ng-hide{
+    -webkit-transition:all ease-out 0.5s; 
+    -moz-transition:all ease-out 0.5s;
+    -o-transition:all ease-out 0.5s;
+    transition:all ease-out 0.5s;
+    opacity: 1;
+    position: absolute;
+    right: -300px;
+}
+
+#login {
+    background: rgba(255, 255, 255, 0.8);
+    height: 100%;
+    width: 100%;
+    /* position: absolute; */
+    position: fixed;
+    top: 0px;
+    z-index: 100;
+}
+#sidebar button:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+#login button:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+#loginBTN, #logoutBTN, #writePostBTN{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    background: yellow;
+    border: solid;
+    border-radius: 10px;
+    width: 110px;
+    height: 60px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#loginBTN{
+    font-size: 30px;
+    margin-top: 100px;
+}
+#logoutBTN{
+    margin-top: 100px;
+}
+#githubBTN{
+    display: block;
+    margin-top: 50px;
+    font-size: 70px;
+    position: absolute;
+    bottom: 50px;
+    left: 125px;
+}
+#writePostBTN{
+    margin-top: 50px;
+}
+#closeLogin {
+    position: absolute;
+    top: -18px;
+    right: -14px;
+}
+#closeLogin-i {
+    font-size:40px;
+    color:#1D70CC;
+}
+#loginform {
+    border-radius: 10px;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    text-align: center;
+    background: rgba(109, 186, 222, 0.98);
+    position: absolute;
+    top: 200px;
+    z-index: 1000;
+}
+#login-table{
+    margin: 0 auto;
+}
+#submitBTN{
+    margin-left:5px;
+}
+#submit-i{
+    font-size:40px;
+}
+#email-label{
+    font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
+    display:block;
+    text-align:right;
+    margin-right:10px;
+}
+#passwd-label{
+    font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
+    display:block;
+    text-align:right;
+    margin-right:10px;
+}
+#loginform input[type="text"]{
+    font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
+    border-bottom: 2px solid #1D70CC;
+    width: 100%;
+}
+#loginform input[type="password"]{
+    border-bottom: 2px solid #1D70CC;
+    width: 100%;
+}
+#write {
+    position: fixed;
+}
+#writeLeft {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 5px;
+}
+#writeLeft input[type="text"]{
+    font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
+    border-bottom: 1px solid black;
+    padding-left: 5px;
+    width:100%;
+}
+#write-area{
+    padding: 5px;
+    margin-top: 10px;
+    border: 1px solid;
+    width: 100%;
+    min-height: 580px;
+}
+#writeRight{
+    padding-left: 10px;
+    width: 96%;
+}
+#writeLeft input{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#render{
+    margin-left: 50%;
+}
+.list{
+    font-family:  sans-serif,monospace;
+    font-size: 16px;
+    margin: .5em 0;
+    padding: 1em;
+    color: white;
+    white-space: pre-wrap;
+    width: 100%;
+    background: #143E58;
+    tab-size: 1;
+    border-radius: 0.3em;
+}
+
+/* -- Responsive Styles (Media Queries) ------------------------------------- */
+/*wider than 768px*/
+@media screen and (min-width: 48em) {
+    #ctableBTN {
+        position: absolute;
+        left: -200px;
+    }
+}
+
+/*narrower than 1024*/
+@media screen and (max-width: 64em) {
+    #placeholder {
+        width: 0px;
+        height: 0px;
+    }
+    #menu-i {
+        font-size:32px;
+        color:#71C0E8;
+    }
+}
+
+
+/*narrower 768px*/
+@media screen and (max-width: 48em) {
+    #ctable {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        /* background: rgba(86, 187, 150, 0.98); */
+        background: rgba(255, 165, 0, 0.98);
+        position: absolute;
+        height: 100%;
+        top: 0px;
+        width: 160px;
+        left: -170px;
+    }
+    #menu-i {
+        font-size:22px;
+        color:#71C0E8;
+    }
+    #ctable.active {
+        -webkit-transition:all ease-out 0.5s; 
+        -moz-transition:all ease-out 0.5s;
+        -o-transition:all ease-out 0.5s;
+        transition:all ease-out 0.5s;
+        opacity: 1;
+        position: absolute;
+        width: 170px;
+        left: 0px;
+    }
+    #ctable.postactive {
+        -webkit-transition:all ease-out 0.5s; 
+        -moz-transition:all ease-out 0.5s;
+        -o-transition:all ease-out 0.5s;
+        transition:all ease-out 0.5s;
+        opacity: 1;
+        position: absolute;
+        width: 170px;
+        left: -170px;
+    }
+    #ctableBTN {
+        color: #71C0E8;
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        left: 0px;
+        top: 38px;
+    }
+    #sidebar {
+        width: 150px;
+    }
+    .slide.ng-hide{
+        right: -150px;
+    }
+    #write-area{
+        min-height: 360px;
+    }
+    #githubBTN{
+        font-size: 30px;
+        left:60px;
+    }
+    #loginBTN, #logoutBTN, #writePostBTN{
+        width: 80px;
+    }
+    #render{
+        margin-left: 0px;
+        margin-top: 550px;
+        height: 400px;
+        overflow: scroll;
+    }
+}

@@ -1,0 +1,20 @@
+<div id="login" class="pure-g" ng-show="showLogin" ng-controller="loginCtrl"> 
+    <div class="pure-u-sm-1-3 pure-u-lg-1-3"></div>
+    <div id="loginform" class="pure-u-1 pure-u-sm-1-3 pure-u-lg-1-3 animated bounceIn">
+    <button id='closeLogin' ng-show="showCloseLoginFormBtn" ng-click="loginFormSwitch()"><i id="closeLogin-i" class="fa fa-times-circle-o"></i></button>
+    <form ng-submit="loginSubmit()">
+        <table id="login-table">
+        <tr>
+            <td><label id="email-label" for="username">Email:</label></td>
+            <td><input type="text" ng-model="username" name="username"></td>
+        </tr>
+        <tr>
+            <td><label id="passwd-label" for="passwd">Password:</label></td>
+            <td><input type="password" ng-model="passwd" name="passwd"></td>
+            <td><button id="submitBTN" type="submit"><i id="submit-i" class="fa fa-send-o"></i></button></td>
+        </tr>
+        </table>
+    </form>
+</div>
+<div class="pure-u-sm-1-3 pure-u-lg-1-3"></div>
+</div> 

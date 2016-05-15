@@ -1,0 +1,28 @@
+        <div ng-controller="ctableCtrl">
+            <ul>
+                <li ng-repeat="artical in articalList">
+                    <div ng-switch="isLoggedin">
+                        <div ng-switch-when="true">
+                            <div class="pure-g">
+                                <div class="pure-u-3-5 pure-u-md-18-24">
+                                <a class="animated fadeIn" id="view-a" ui-sref='root.home.artical({id: artical.slug})'>{{artical.title}}</a>
+                                </div>
+                                <div class="pure-u-1-5 pure-u-md-3-24">
+                                    <button class="animated fadeIn" id="del-a" ng-click="deleteArtical(artical.index)"><i class="fa fa-trash"></i></button>
+                                </div>
+                                <div class="pure-u-1-5 pure-u-md-3-24">
+                                    <button class="animated fadeIn" id="edit-a" ng-click="editArtical(artical.slug)"><i class="fa fa-edit"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div ng-switch-when="false">
+                            <div class="pure-g">
+                                <div class="pure-u-1">
+                                <a class="animated fadeIn" id="view-a" ui-sref='root.home.artical({id: artical.slug})'>{{artical.title}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>

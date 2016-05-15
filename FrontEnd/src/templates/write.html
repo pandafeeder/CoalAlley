@@ -1,0 +1,18 @@
+<div class="pure-g">
+    <div id="write" class="pure-u-1 pure-u-md-1-2" ng-controller="postWriteLeftCtrl">
+        <div id="writeLeft">
+            <form ng-submit="postSubmit()">
+                <label for="title">Title:</label>
+                <input id='t-i' ng-focus="setBkgColor('t-i','#e5fff3')" ng-blur="setBkgColor('t-i','white')" type="text" name="title" ng-model="postTitle">
+                <label for="slug">Slug:</label>
+                <input id='s-i' ng-focus="setBkgColor('s-i','#e5fff3')" ng-blur="setBkgColor('s-i','white')" type="text" name="slug" ng-model="postSlug">
+                <textarea  ng-focus="setBkgColor('write-area','#e5fff3')" ng-blur="setBkgColor('write-area','white')" id="write-area" name="content" ng-model="postContent.writing"></textarea>
+                <br>
+                <input type="submit" value="POST">
+            </form>
+        </div>
+    </div>
+    <div id="render" class="pure-u-1 pure-u-md-1-2" ng-controller="postWriteRightCtrl">
+        <div id="writeRight" ng-bind-html="ToHTML()">
+    </div>
+</div>

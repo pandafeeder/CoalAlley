@@ -1,0 +1,19 @@
+<div id="sidebar" ng-show="showMenu" class="slide"> 
+    <div ng-switch="isLoggedin">
+        <div ng-switch-when="false">
+        <button id="loginBTN" ng-click="loginFormSwitch()"><i class="fa fa-sign-in"></i></button>
+        </div>
+        <div ng-switch-when="true">
+        <button id="logoutBTN" ng-click="$emit('logoutEvent')">Logout</button>
+        </div>
+    </div>
+    <div>
+        <button id="writePostBTN" ng-show="isLoggedin" ng-click="writePost($event)">
+        New Post 
+        </button>
+    </div>
+    <div> 
+        <button id="githubBTN"><a href=""><i class="fa fa-github"></i></a></button>
+    </div>
+</div>
+

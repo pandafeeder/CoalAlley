@@ -1,0 +1,14 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html ng-app="Myapp" ng-strict-di>
+<head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <title>Coal Alley</title>
+</head>
+<body ng-controller="mainCtrl">
+    <div ui-view></div>
+    <script src="{% static 'coalmine/js/bundle.js' %}"></script>
+</body>
+</html>

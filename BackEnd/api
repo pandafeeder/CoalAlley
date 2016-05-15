@@ -1,0 +1,35 @@
+root:
+	/api
+
+
+
+articals
+	/api/articals
+		[
+			{title: xxxxx, slug:xxxx},
+			{title: xxxxx, slug:xxxx},
+			{title: xxxxx, slug:xxxx},
+			{title: xxxxx, slug:xxxx},
+		]
+
+
+
+single artical
+	/api/articals/?slug=xxxx
+		{
+			title: xxxxx,
+			slug: xxxxx,
+			content: xxxxx,
+			created: xxxxx,
+			modified: xxxxx,
+		}
+
+
+
+authors
+	/api/authors
+
+
+
+single author
+	/api/authors/?slug=xxxx
