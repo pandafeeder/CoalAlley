@@ -1,4 +1,4 @@
-loginCtrl.$injdect = ['$rootScope', '$scope', '$location', '$http', 'API', 'Authentication']
+loginCtrl.$inject = ['$rootScope', '$scope', '$location', '$http', 'API', 'Authentication']
 function loginCtrl($rootScope, $scope, $location, $http, API, Authentication) {
     console.log("loginCtrl working too")
     function closeLoginForm () {
