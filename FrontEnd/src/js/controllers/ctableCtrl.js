@@ -32,7 +32,7 @@ function ctableCtrl($state, ArticalStore, $scope, getArticalList, deletePost) {
         console.log(ArticalStore.raw_data)
     }
     $scope.editArtical = function(slug) {
-        $state.go('write', {id: slug})
+        $state.go('write', {slug: slug})
     }
 }
 

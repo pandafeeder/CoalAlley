@@ -16,7 +16,7 @@ const ngAnimate = require('angular-animate')
 const mainCtrl           = require('./controllers/mainCtrl')
 const ctableCtrl         = require('./controllers/ctableCtrl')
 const contentCtrl        = require('./controllers/contentCtrl')
-const coverCtrl          = require('./controllers/coverCtrl')
+//const coverCtrl          = require('./controllers/coverCtrl')
 const loginCtrl          = require('./controllers/loginCtrl')
 const postWriteLeftCtrl  = require('./controllers/postWriteLeftCtrl')
 const postWriteRightCtrl = require('./controllers/postWriteRightCtrl')
@@ -34,7 +34,7 @@ const MD2HTML        = require('./services/MD2HTML')
 var app = angular.module('Myapp', ['ui.router', 'ngStorage', 'ngAnimate', 'ngSanitize'])
 
 //associate controllers to app
-var controllers = [mainCtrl, ctableCtrl, contentCtrl, coverCtrl, loginCtrl, postWriteLeftCtrl, postWriteRightCtrl]
+var controllers = [mainCtrl, ctableCtrl, contentCtrl, loginCtrl, postWriteLeftCtrl, postWriteRightCtrl]
 controllers.forEach(function(item, index) {
         app.controller(item)
 })
@@ -53,7 +53,7 @@ app.service(ArticalStore)
 
 
 app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/')
+    $urlRouterProvider.otherwise('')
     $stateProvider
         .state('root', {
             abstract: true,
@@ -78,18 +78,13 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
             }
         })
         .state('root.home.artical', {
-            url: '/artical/:id',
+            url: '/artical/:slug',
             views: {
                 '@root.home': {template: require('../templates/artical.html')},
             },
         })
-        //no need for a single page as login
-        //.state('login', {
-        //    url: '/login',
-        //    template: require('../templates/login.html'),
-        //})
         .state('write', {
-            url: '/write/:id',
+            url: '/write/:slug',
             template: require('../templates/write.html'),
         })
 }])

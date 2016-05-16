@@ -1,7 +1,7 @@
 postWriteLeftCtrl.$inject = ['getArtical', 'ArticalStore', 'API', '$http', 'MD2HTML', '$scope', '$stateParams', '$window']
 
 function postWriteLeftCtrl(getArtical, ArticalStore, API, $http, MD2HTML, $scope, $stateParams, $window) {
-    var slug = $stateParams.id, postmethod, url
+    var slug = $stateParams.slug, postmethod, url
     $scope.postContent = MD2HTML
     if (slug) {
         if (!ArticalStore[slug] || !ArticalStore[slug].content) {
