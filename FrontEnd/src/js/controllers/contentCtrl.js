@@ -4,34 +4,39 @@ var showdown = require('showdown')
 //use file downloaded from prismjs.org instead
 var Prism = require('../prism/prism')
 
-contentCtrl.$inject = ['getArtical', 'ArticalStore', 'API','$scope','$stateParams','$http']
-function contentCtrl(getArtical, ArticalStore, API, $scope, $stateParams, $http) {
-    var id = $stateParams.id
+contentCtrl.$inject = ['getArtical', 'ArticalStore', '$scope','$stateParams']
+function contentCtrl(getArtical, ArticalStore, $scope, $stateParams) {
+    var slug = $stateParams.slug
     var converter = new showdown.Converter()
     //console.log('content working')
-    if (!ArticalStore[id] || !ArticalStore[id]['content']) {
-        console.log("using requested detail data")
-        var getPromise = getArtical.getPromise(id)
-        getPromise.then(
-            function successCallback(data) {
-                data.content_html = converter.makeHtml(data.content)
-                $scope.artical = data 
-                if (ArticalStore[id]) {
-                ArticalStore[id]['content'] = data.content
-                ArticalStore[id]['content_html'] = data.content_html
-                } else {
-                    ArticalStore[id] = {}
-                    ArticalStore[id]['content'] = data.content
-                    ArticalStore[id]['content_html'] = data.content_html
+    $scope.retriveArtical = function(slug, ArticalStore, getArtical, converter) {
+        if (!ArticalStore[slug] || !ArticalStore[slug]['content']) {
+            //console.log('use requested data')
+            var getPromise = getArtical.getPromise(slug)
+            getPromise.then(
+                function successCallback(data) {
+                    data.content_html = converter.makeHtml(data.content)
+                    $scope.artical = data
+                    if (ArticalStore[slug]) {
+                        ArticalStore[slug]['content'] = data.content
+                        ArticalStore[slug]['content_html'] = data.content_html
+                    } else {
+                        ArticalStore[slug] = {}
+                        ArticalStore[slug]['content'] = data.content
+                        ArticalStore[slug]['content_html'] = data.content_html
+                    }
+                },
+                function errorCallback(data) {
+                    $scope.error = data.msg
                 }
-            },
-            function errorCallback(data) {
-                $scope.error = data.msg
-        })
-    } else {
-        console.log("using ArticalSotre.id")
-        $scope.artical = ArticalStore[id]
+            )
+        } else {
+            //console.log('use ArticalStore data')
+            $scope.artical = ArticalStore[slug]
+        }
     }
+    $scope.retriveArtical(slug, ArticalStore, getArtical, converter)
+    //use $watch to push its argument function into digest cycle
     $scope.$watch(function () {
         //console.log("WATCHing...")
         Prism.highlightAll()
