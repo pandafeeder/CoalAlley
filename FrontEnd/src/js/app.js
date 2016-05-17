@@ -28,7 +28,6 @@ const ArticalStore   = require('./services/ArticalStore')
 const deletePost     = require('./services/deletePost')
 const getArtical     = require('./services/getArtical')
 const getArticalList = require('./services/getArticalList')
-const MD2HTML        = require('./services/MD2HTML')
 const md2html_filter = require('./services/md2html_filter')
 
 var app = angular.module('Myapp', ['ui.router', 'ngStorage', 'ngAnimate', 'ngSanitize'])
@@ -40,7 +39,7 @@ controllers.forEach(function(item, index) {
 })
 
 //associate service-facotry to app
-var services = [modifyStyle, Authentication, deletePost, getArtical, getArticalList, MD2HTML]
+var services = [modifyStyle, Authentication, deletePost, getArtical, getArticalList]
 services.forEach(function(item, index) {
         app.factory(item)
 })
