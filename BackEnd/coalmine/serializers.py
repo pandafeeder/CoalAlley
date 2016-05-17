@@ -21,14 +21,14 @@ class ArticalListSerializer(ArticalBaseSerializer):
 
     class Meta:
         model = Artical
-        fields = ('title', 'self', 'owner', 'slug', 'modified',)
+        fields = ('title', 'self', 'owner', 'slug', 'created',)
 
 
 class ArticalSerializer(ArticalBaseSerializer):
 
     class Meta:
         model = Artical
-        fields = ('title', 'self', 'owner', 'slug', 'author', 'content', 'modified')
+        fields = ('title', 'self', 'owner', 'slug', 'author', 'content', 'created')
 
     #override create, otherwise Aritcal needs a presaved author obj then 
     #raising a error
