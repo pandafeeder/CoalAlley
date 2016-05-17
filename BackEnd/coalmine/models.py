@@ -21,4 +21,4 @@ class Artical(BaseModel):
 	return self.title
     
     class Meta:
-        ordering = ('-modified',)
+        ordering = ('-created',)
