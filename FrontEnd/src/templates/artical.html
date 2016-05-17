@@ -1,5 +1,6 @@
 <div class="animated fadeIn" ng-controller='contentCtrl'>
     <div id="title"><h1>{{artical.title}}</h1></div>
-    <div id="detail" ng-bind-html="artical.content_html"></div>
-    <div id="modified"><p>{{artical.modified | date:'MM/dd/yyyy @ h:mma'}}</p></div>
+    <!-- <div id="detail" ng-bind-html="artical.content_html"></div> -->
+    <div id="detail" ng-bind-html="artical.content | md2html"></div>
+    <div id="modified"><p>{{artical.created | date:'MM/dd/yyyy @ h:mma'}}</p></div>
 </div>

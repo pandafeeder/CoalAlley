@@ -1,5 +1,5 @@
-<div class="pure-g">
-    <div id="write" class="pure-u-1 pure-u-md-1-2" ng-controller="postWriteLeftCtrl">
+<div class="pure-g" ng-controller="postWriteLeftCtrl">
+    <div id="write" class="pure-u-1 pure-u-md-1-2"> 
         <div id="writeLeft">
             <form ng-submit="postSubmit()">
                 <label for="title">Title:</label>
@@ -12,7 +12,7 @@
             </form>
         </div>
     </div>
-    <div id="render" class="pure-u-1 pure-u-md-1-2" ng-controller="postWriteRightCtrl">
-        <div id="writeRight" ng-bind-html="ToHTML()">
+    <div id="render" class="pure-u-1 pure-u-md-1-2"> 
+        <div id="writeRight" ng-bind-html="postContent.writing | md2html "></div>
     </div>
 </div>

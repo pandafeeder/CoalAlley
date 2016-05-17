@@ -19,7 +19,6 @@ const contentCtrl        = require('./controllers/contentCtrl')
 //const coverCtrl          = require('./controllers/coverCtrl')
 const loginCtrl          = require('./controllers/loginCtrl')
 const postWriteLeftCtrl  = require('./controllers/postWriteLeftCtrl')
-const postWriteRightCtrl = require('./controllers/postWriteRightCtrl')
 
 //services
 const modifyStyle    = require('./services/modifyStyle')
@@ -30,11 +29,12 @@ const deletePost     = require('./services/deletePost')
 const getArtical     = require('./services/getArtical')
 const getArticalList = require('./services/getArticalList')
 const MD2HTML        = require('./services/MD2HTML')
+const md2html_filter = require('./services/md2html_filter')
 
 var app = angular.module('Myapp', ['ui.router', 'ngStorage', 'ngAnimate', 'ngSanitize'])
 
 //associate controllers to app
-var controllers = [mainCtrl, ctableCtrl, contentCtrl, loginCtrl, postWriteLeftCtrl, postWriteRightCtrl]
+var controllers = [mainCtrl, ctableCtrl, contentCtrl, loginCtrl, postWriteLeftCtrl]
 controllers.forEach(function(item, index) {
         app.controller(item)
 })
@@ -51,6 +51,8 @@ app.constant(API)
 //associate service-service to app
 app.service(ArticalStore)
 
+//associate filter to app
+app.filter(md2html_filter)
 
 app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('')
