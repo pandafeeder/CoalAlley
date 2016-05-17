@@ -1,0 +1,7 @@
+*.pyc
+*.swp
+database
+FrontEnd/node_modules/
+FrontEnd/coverage/
+FrontEnd/test_out/
+FrontEnd/dist/
