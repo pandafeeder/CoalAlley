@@ -18,7 +18,7 @@ const ctableCtrl         = require('./controllers/ctableCtrl')
 const contentCtrl        = require('./controllers/contentCtrl')
 //const coverCtrl          = require('./controllers/coverCtrl')
 const loginCtrl          = require('./controllers/loginCtrl')
-const postWriteLeftCtrl  = require('./controllers/postWriteLeftCtrl')
+const postWriteCtrl  = require('./controllers/postWriteCtrl')
 
 //services
 const modifyStyle    = require('./services/modifyStyle')
@@ -33,7 +33,7 @@ const md2html_filter = require('./services/md2html_filter')
 var app = angular.module('Myapp', ['ui.router', 'ngStorage', 'ngAnimate', 'ngSanitize'])
 
 //associate controllers to app
-var controllers = [mainCtrl, ctableCtrl, contentCtrl, loginCtrl, postWriteLeftCtrl]
+var controllers = [mainCtrl, ctableCtrl, contentCtrl, loginCtrl, postWriteCtrl]
 controllers.forEach(function(item, index) {
         app.controller(item)
 })
