@@ -61,15 +61,14 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
             template: require('../templates/top.html')
         })
         .state('root.home', {
-            abstract: true,
+            //abstract: true,
             views: {
                 'nav@root'    : {template: require('../templates/nav.html')},
                 'ctable@root' : {template: require('../templates/ctable.html')},
                 'content@root': {template: require('../templates/content.html')},
-                'content@root': {template: require('../templates/content.html')},
-                'foot@root'   : {template: require('../templates/foot.html')},
                 'sidebar@root': {template: require('../templates/sidebar.html')},
                 'login@root'  : {template: require('../templates/login.html')},
+                'foot@root'   : {template: require('../templates/foot.html')},
             }
         })
         .state('root.home.cover', {
@@ -100,7 +99,7 @@ app.run(['$window', '$rootScope', '$localStorage', '$http', '$location', functio
             $rootScope.$broadcast("documentClicked", e.target)
         })
         $rootScope.$on('$locationChangeStart', function(event, next, current) {
-            var restrictPage = /\/write\/.*/i
+            var restrictPage = /\/write\/?.*/i
             if ($location.path().match(restrictPage) && !$localStorage.currentUser) {
                 console.log("restrict page")
                 //add this to prevent rendering write page
