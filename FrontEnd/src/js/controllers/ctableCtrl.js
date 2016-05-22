@@ -16,7 +16,7 @@ function ctableCtrl($state, ArticalStore, $scope, getArticalList, deletePost) {
     } else {
         //console.log("useing raw_data")
         $scope.articalList = ArticalStore.raw_data
-        console.log(ArticalStore.raw_data)
+        //console.log(ArticalStore.raw_data)
     }
     $scope.deleteArtical = function(index) {
         var slug = ArticalStore.raw_data[index].slug
@@ -29,7 +29,7 @@ function ctableCtrl($state, ArticalStore, $scope, getArticalList, deletePost) {
             function errorCallback(response) {
                 console.log(response.status)
         })
-        console.log(ArticalStore.raw_data)
+        //console.log(ArticalStore.raw_data)
     }
     $scope.editArtical = function(slug) {
         $state.go('write', {slug: slug})

@@ -1,6 +1,6 @@
 loginCtrl.$inject = ['$rootScope', '$scope', '$location', '$http', 'API', 'Authentication']
 function loginCtrl($rootScope, $scope, $location, $http, API, Authentication) {
-    console.log("loginCtrl working too")
+    //console.log("loginCtrl working too")
     function closeLoginForm () {
         $scope.showLogin = false
         $scope.showLoginNav = false

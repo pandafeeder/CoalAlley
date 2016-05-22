@@ -41,11 +41,9 @@ function postWriteCtrl(getArtical, ArticalStore, API, $http, $scope, $stateParam
         }
         $http(req).then(
             function successCallback(response) {
-                console.log($http.defaults.headers.common.Authorization)
                 $window.location.href = '/'
             },
             function errorCallback(response) {
-                console.log($http.defaults.headers.common.Authorization)
                 console.log("error")
                 console.log(response.status)
             })
