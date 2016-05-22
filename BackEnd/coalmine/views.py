@@ -78,10 +78,10 @@ class ArticalDetailView(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
-class AuthorListView(generics.ListAPIView):
-    serializer_class = AuthorSerializer
-    queryset = User.objects.all()
+#class AuthorListView(generics.ListAPIView):
+    #serializer_class = AuthorSerializer
+    #queryset = User.objects.all()
 
-class AuthorDetailView(generics.RetrieveAPIView):
-    serializer_class = AuthorSerializer
-    queryset = User.objects.all()
+#class AuthorDetailView(generics.RetrieveAPIView):
+    #serializer_class = AuthorSerializer
+    #queryset = User.objects.all()
