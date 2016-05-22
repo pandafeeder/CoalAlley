@@ -1,1 +1,1 @@
-/Users/qusr/GitHub/learnDjango/CoalAlley/FrontEnd/dist/bundle.js
+../../../../../FrontEnd/dist/bundle.js
