@@ -1,6 +1,6 @@
-postWriteLeftCtrl.$inject = ['getArtical', 'ArticalStore', 'API', '$http', '$scope', '$stateParams', '$window']
+postWriteCtrl.$inject = ['getArtical', 'ArticalStore', 'API', '$http', '$scope', '$stateParams', '$window']
 
-function postWriteLeftCtrl(getArtical, ArticalStore, API, $http, $scope, $stateParams, $window) {
+function postWriteCtrl(getArtical, ArticalStore, API, $http, $scope, $stateParams, $window) {
     var slug = $stateParams.slug, postmethod, url
     $scope.postContent = {}
     if (slug) {
@@ -55,4 +55,4 @@ function postWriteLeftCtrl(getArtical, ArticalStore, API, $http, $scope, $stateP
     }
 }
 
-exports.postWriteLeftCtrl = postWriteLeftCtrl
+exports.postWriteCtrl = postWriteCtrl
