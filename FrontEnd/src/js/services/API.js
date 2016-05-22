@@ -1,8 +1,8 @@
 API = {
-    articalListUrl: 'http://localhost:8000/api/articals',
-    articalListUrl_bad: 'http://localhost:8000/api/articaals',
-    artical: 'http://localhost:8000/api/articals/',
-    JWTtokenURL: 'http://localhost:8000/api-token-auth/'
+    articalListUrl: 'https://pandafeeder.com/api/articals',
+    articalListUrl_bad: 'https://pandafeeder.com/api/articaals',
+    artical: 'https://pandafeeder.com/api/articals/',
+    JWTtokenURL: 'https://pandafeeder.com/api-token-auth/'
 }
 
 exports.API = API
