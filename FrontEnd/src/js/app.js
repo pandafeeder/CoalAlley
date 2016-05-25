@@ -89,7 +89,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
         })
 }])
 
-app.run(['$window', '$rootScope', '$localStorage', '$http', '$location', function($window, $rootScope, $localStorage, $http, $location) {
+app.run(['$window', '$rootScope', '$localStorage', '$location', function($window, $rootScope, $localStorage, $location) {
         document.addEventListener("keyup", function(e) {
         if (e.keyCode == 27) {
             $rootScope.$broadcast("escapePressed", e.target)
@@ -102,7 +102,7 @@ app.run(['$window', '$rootScope', '$localStorage', '$http', '$location', functio
             var restrictPage = /\/write\/?.*/i
             if ($location.path().match(restrictPage) && !$localStorage.currentUser) {
                 console.log("restrict page")
-                //add this to prevent rendering write page
+                //add this to prevent rendering blank write page
                 $location.path('')
                 //window.location.herf is browser side navgation
                 $window.location.href = '/'
