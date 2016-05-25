@@ -24,7 +24,8 @@ User = get_user_model()
 def api_root(request, format=None):
     return Response({
 	'articals': reverse('api:artical-list', request=request, format=format),
-	'authors':  reverse('api:author-list',  request=request, format=format)
+	#'authors':  reverse('api:author-list',  request=request, format=format)
+	'token':  reverse('token',  request=request, format=format)
     })
 
 
