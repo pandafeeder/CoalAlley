@@ -13,7 +13,7 @@ urlpatterns += [
 ]
 
 urlpatterns += [
-        url(r'^api-token-auth/', obtain_jwt_token),
+        url(r'^api-token-auth/', obtain_jwt_token, name="token"),
 ]
 
 urlpatterns += [
