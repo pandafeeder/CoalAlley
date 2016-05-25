@@ -1,8 +1,25 @@
 API = {
-    articalListUrl: 'https://pandafeeder.com/api/articals',
-    articalListUrl_bad: 'https://pandafeeder.com/api/articaals',
-    artical: 'https://pandafeeder.com/api/articals/',
-    JWTtokenURL: 'https://pandafeeder.com/api-token-auth/'
+    articalListUrl: '/api/articals',
+    artical: '/api/articals/',
+    JWTtokenURL: '/api-token-auth/'
 }
+/*
+API.$inject = ['$http']
+function API () {
+    this.fetchAPI = function (rootAPI_ID) {
+        var ele = document.getElementById(rootAPI_ID),
+            api = JSON.parse(ele.innerText)
+        $http.get(api.rootApi).then(
+                function successCallback(response) {
+                    this.articalListUrl = response.articals
+                    this.artical = this.articalListUrl+'/'
+                    this.JWTtokenURL = response.token
+                },
+                function failCallback(response) {
+                    this.error = response.status
+                })
+    }
+}
+*/
 
 exports.API = API
