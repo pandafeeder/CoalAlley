@@ -35,8 +35,13 @@ class ArticalListView(APIView):
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
     def get(self, request, format=None):
         #print request.user
-        articals = Artical.objects.all()
-        serializer = ArticalListSerializer(articals, many=True, context={'request':request})
+        ordering = request.query_params.get('ordering', None)
+        if ordering == 'latest':
+            artical = Artical.objects.latest('created')
+            serializer = ArticalSerializer(artical, context={'request':request})
+        else:
+            articals = Artical.objects.all()
+            serializer = ArticalListSerializer(articals, many=True, context={'request':request})
         return Response(serializer.data)
 
     def post(self, request, format=None):
