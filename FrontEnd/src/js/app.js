@@ -18,7 +18,7 @@ const ctableCtrl         = require('./controllers/ctableCtrl')
 const contentCtrl        = require('./controllers/contentCtrl')
 //const coverCtrl          = require('./controllers/coverCtrl')
 const loginCtrl          = require('./controllers/loginCtrl')
-const postWriteCtrl  = require('./controllers/postWriteCtrl')
+const postWriteCtrl      = require('./controllers/postWriteCtrl')
 
 //services
 const modifyStyle    = require('./services/modifyStyle')
@@ -71,10 +71,10 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
                 'foot@root'   : {template: require('../templates/foot.html')},
             }
         })
-        .state('root.home.cover', {
+        .state('root.home.latest', {
             url: '',
             views: {
-                '@root.home': {template: require('../templates/cover.html')},
+                '@root.home': {template: require('../templates/artical.html')},
             }
         })
         .state('root.home.artical', {
