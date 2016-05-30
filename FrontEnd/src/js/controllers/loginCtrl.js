@@ -1,18 +1,10 @@
-loginCtrl.$inject = ['$rootScope', '$scope', '$location', '$http', 'API', 'Authentication']
-function loginCtrl($rootScope, $scope, $location, $http, API, Authentication) {
+loginCtrl.$inject = ['$scope', 'Authentication']
+function loginCtrl($scope, Authentication) {
     //console.log("loginCtrl working too")
     function closeLoginForm () {
         $scope.showLogin = false
         $scope.showLoginNav = false
         $scope.showCloseLoginFormBtn = true
-    }
-    function openLoginForm () {
-        $scope.showLogin = true
-        $scope.showLoginNav = true
-        $scope.showCloseLoginFormBtn = false
-    }
-    if ($location.path() == '/login') {
-        openLoginForm()
     }
     $scope.loginSubmit = function () {
         var loginPromise = Authentication.Login($scope.username, $scope.passwd)
@@ -22,10 +14,13 @@ function loginCtrl($rootScope, $scope, $location, $http, API, Authentication) {
                 $scope.$emit("loginEvent")
             },
             function errorCallback(msg) {
-                console.log(msg)
+                $scope.authFail = true
             }
         )
     }
+    $scope.$on("closeLoginForm", function () {
+        $scope.authFail = false
+    })
 }
 
 exports.loginCtrl = loginCtrl

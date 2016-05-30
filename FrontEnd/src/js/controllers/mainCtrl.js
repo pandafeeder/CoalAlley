@@ -37,6 +37,7 @@ function mainCtrl (modifyStyle, Authentication, $http, $localStorage, $scope, $r
         $scope.loginFormSwitch = function() {
             $scope.showLogin = !$scope.showLogin
             $scope.showCloseLoginFormBtn = !$scope.showCloseLoginFormBtn
+            $scope.$broadcast('closeLoginForm')
         }
 
         //function to write new post button
