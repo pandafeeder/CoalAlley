@@ -30,30 +30,30 @@ const getArtical     = require('./services/getArtical')
 const getArticalList = require('./services/getArticalList')
 const md2html_filter = require('./services/md2html_filter')
 
-var app = angular.module('Myapp', ['ui.router', 'ngStorage', 'ngAnimate', 'ngSanitize'])
+angular.module('Myapp', ['ui.router', 'ngStorage', 'ngAnimate', 'ngSanitize'])
 
 //associate controllers to app
 var controllers = [mainCtrl, ctableCtrl, contentCtrl, loginCtrl, postWriteCtrl]
 controllers.forEach(function(item, index) {
-        app.controller(item)
+        angular.module('Myapp').controller(item)
 })
 
 //associate service-facotry to app
 var services = [modifyStyle, Authentication, deletePost, getArtical, getArticalList]
 services.forEach(function(item, index) {
-        app.factory(item)
+        angular.module('Myapp').factory(item)
 })
 
 //associate service-constant to app
-app.constant(API)
+angular.module('Myapp').constant(API)
 
 //associate service-service to app
-app.service(ArticalStore)
+angular.module('Myapp').service(ArticalStore)
 
 //associate filter to app
-app.filter(md2html_filter)
+angular.module('Myapp').filter(md2html_filter)
 
-app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+angular.module('Myapp').config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('')
     $stateProvider
         .state('root', {
@@ -89,7 +89,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
         })
 }])
 
-app.run(['$window', '$rootScope', '$localStorage', '$location', function($window, $rootScope, $localStorage, $location) {
+angular.module('Myapp').run(['$window', '$rootScope', '$localStorage', '$location', function($window, $rootScope, $localStorage, $location) {
         document.addEventListener("keyup", function(e) {
         if (e.keyCode == 27) {
             $rootScope.$broadcast("escapePressed", e.target)
