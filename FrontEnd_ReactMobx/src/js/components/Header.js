@@ -26,7 +26,9 @@ const Header = (props) => {
             <a href="#" style={styleSheet.a}>{props.header}</a>
             </span>
             <span style={{...styleSheet.span, float: 'right'}}>
-            <a onClick={e => {e.preventDefault(); props.showSlide()} } href="#" style={styleSheet.a}>☰</a>
+            <a onClick={e => {e.preventDefault()
+                              props.showSlideFunc()}} 
+                href="#0" style={styleSheet.a}>☰</a>
             </span>
         </header>
     )
