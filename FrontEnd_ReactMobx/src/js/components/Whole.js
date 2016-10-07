@@ -4,28 +4,39 @@ import { observer } from 'mobx-react'
 import Header from './Header'
 import Slide from './Slide'
 import Footer from './Footer'
+import Login from './Login'
 
 
 const Whole = observer(class Whole extends Component {
     constructor(props) {
         super(props)
-        this.state = {showSlideBar: false}
-        this.showSlide = this.showSlide.bind(this)
+        this.state = {showSlideFuncBar: false,
+                      showLogin: false}
+        this.showSlideFunc = this.showSlideFunc.bind(this)
+        this.showLoginFunc = this.showLoginFunc.bind(this)
+        this.closeLoginFunc = this.closeLoginFunc.bind(this)
         this.keyupHandler = this.keyupHandler.bind(this)
         this.clickHandler = this.clickHandler.bind(this)
     }
 
-    showSlide() {
-        this.setState({showSlideBar : true})
+    showSlideFunc() {
+        this.setState({showSlideFuncBar : true})
+    }
+
+    showLoginFunc() {
+        this.setState({showLogin: true})
+    }
+    closeLoginFunc() {
+        this.setState({showLogin: false})
     }
 
     keyupHandler(e) {
         if (e.keyCode === 27) {
-            this.setState({showSlideBar: false})
+            this.setState({showSlideFuncBar: false})
         }
     }
     clickHandler(e) {
-        this.setState({showSlideBar: false})
+        this.setState({showSlideFuncBar: false})
     }
 
     componentDidMount() {
@@ -42,9 +53,10 @@ const Whole = observer(class Whole extends Component {
         return(
             <div ref={ref => this.whole = ref}>
                 <Header header="Coal Alley"
-                        showSlide={this.showSlide}
+                        showSlideFunc={this.showSlideFunc}
                 />
-                <Slide login={this.props.route.store.login} show={this.state.showSlideBar}/>
+                <Slide login={this.props.route.store.login} show={this.state.showSlideFuncBar} showLoginFunc={this.showLoginFunc}/>
+                <Login closeLoginFunc={this.closeLoginFunc} show={this.state.showLogin}/>
                 {this.props.children}
                 <Footer/>
             </div>
