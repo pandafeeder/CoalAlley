@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Login from './Login'
 import { observer } from 'mobx-react'
 
 let styleSheet = {
@@ -25,14 +24,19 @@ const Slide = observer(class Slide extends Component {
                 <button>LOGOUT</button>
                 <button>WRITE POSST</button>
               </div>
-            : <button>LOGIN</button>
+            : <button onClick={(e) => {
+                this.props.showLoginFunc()
+              }}
+              >
+                LOGIN
+              </button>
         return (
-            <div style={this.props.show ? {...styleSheet.div}
-                                   : {...styleSheet.div, display: 'none'}
+            <div style={this.props.show 
+                          ? {...styleSheet.div}
+                          : {...styleSheet.div, display: 'none'}
                         }>
                 {content}
                 <a href="#">GITHUB</a>
-                <Login />
             </div>
         )
     }
