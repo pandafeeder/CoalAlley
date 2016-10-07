@@ -26,7 +26,7 @@ const Main = observer((props) => {
     return(
         <div style={styleSheet.container}>
             <ArticleList store={props.route.store}/>
-            <Article article={article}>
+            <Article login={props.route.store.login} article={article}>
             </Article>
         </div>
     )
