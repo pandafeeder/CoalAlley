@@ -1,5 +1,6 @@
 import React from 'react'
 import { observer } from 'mobx-react'
+import { Link } from 'react-router'
 
 let styleSheet = {
     container: {
@@ -8,13 +9,19 @@ let styleSheet = {
     },
     ul: {
         listStyle: 'none',
+    },
+    link: {
+        display: 'block',
     }
 }
 
 const ArticleList = observer((props) => {
-    let titleList = props.store.login
-        ? props.store.articleList.map(i => <li key={i.slug}>{i.title} <a>DELETE</a> <a>EDIT</a></li>)
-        : props.store.articleList.map(i => <li key={i.slug}>{i.title}</li>)
+    let titleList = 
+         props.store.articleList.map(i => 
+            <Link to={'/article/'+i.slug}
+                  style={styleSheet.link}
+                  key={i.slug}>{i.title}</Link>
+         )
     return(
         <div style={styleSheet.container}>
             <ul style={styleSheet.ul}>
