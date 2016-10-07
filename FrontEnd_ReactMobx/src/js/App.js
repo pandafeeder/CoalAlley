@@ -26,7 +26,10 @@ const App = observer(class App extends Component{
                     <IndexRoute component={Main} store={this.props.store}/>
                     <Route path='article/:slug' component={Main} store={this.props.store}/>
                 </Route>
-                <Route path='write' component={Write}/>
+                <Route path='write'>
+                    <IndexRoute component={Write} store={this.props.store}/>
+                    <Route path=':slug' component={Write} store={this.props.store}/>
+                </Route>
             </Router>
         )
     }
