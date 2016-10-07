@@ -19,9 +19,18 @@ let styleSheet = {
     }
 }
 
-const Login = () => (
-    <div style={styleSheet.container}>
+const Login = (props) => (
+    <div style={props.show
+                ? {...styleSheet.container, display: 'flex'}
+                : {...styleSheet.container, display: 'none'}
+         }
+    >
         <form style={styleSheet.form}>
+            <button onClick={e => {
+                e.preventDefault()
+                props.closeLoginFunc()
+            }}
+            >X</button>
             LOGINFORM
         </form>
     </div>
