@@ -1,17 +1,18 @@
 import React from 'react'
-
-let styleSheet = {
-    footer: {
-        textAlign: 'center',
-        height: 100,
-        width: '100%',
-        marginTop: 50,
-    }
-}
+const glamor = require('glamor')
 
 const Footer = () => (
-    <footer style={styleSheet.footer}>THIS IS FOOTER</footer>
+    <footer className={`${containerStyle}`}>
+        <a href="mailto:pandafeeder@gmail.com">pandafeeder@gmail.com</a>
+    </footer>
 )
 
 
 export default Footer
+
+let containerStyle = glamor.style({
+    display: 'inline-block',
+    lineHeight: '100px',
+    textAlign: 'center',
+    width: '100%',
+})
