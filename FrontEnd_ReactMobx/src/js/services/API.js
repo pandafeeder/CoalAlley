@@ -1,8 +1,9 @@
 const API = {
     token: '/api-token-auth',
-    articles: '/api/articals',
-    article: '/api/articals/',
-    verifyToken: '/api-verify-token'
+    articles: '/api/articles',
+    article: '/api/articles/',
+    verifyToken: '/api-verify-token',
+    upload: '/upload',
 }
 
 export default API
