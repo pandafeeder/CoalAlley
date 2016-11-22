@@ -2,9 +2,11 @@ import React from 'react'
 import { observer } from 'mobx-react'
 import { action, transaction } from 'mobx'
 import { browserHistory } from 'react-router'
+import Uploader from './Uploader'
 const glamor = require('glamor')
 
 const Writer = observer((props) => {
+    let fileinput
     if (props.article.fetching) {
         return <div>LOADING...</div>
     } 
@@ -29,21 +31,21 @@ const Writer = observer((props) => {
                     browserHistory.push('/')
                 }
             }}>
-                <table style={{width: '100%'}}>
+                <table style={{width: '80%', marginBottom:'10px'}}>
                     <tbody>
                         <tr>
-                            <th><p>Title:</p></th>
-                            <th>
+                            <th style={{textAlign:'left', width: '10%'}}>Title:</th>
+                            <th style={{width: '80%'}}>
                                 <input className={`${inputTextStyle}`}
                                     onChange={e => action(() => props.article.title = e.target.value)()} 
                                     name="title" type="text" value={props.article.title}/>
                             </th>
-                            <th>
-                                <input rowSpan='2' type="submit"/>
+                            <th style={{width: '10%', verticalAlign:'middle', textAlign:'center'}} rowSpan="2">
+                                <input style={{fontSize: '1.2em', border:'none', borderRadius: '2px', backgroundColor:'lightgreen', height:'100%', width:'100%'}} type="submit"/>
                             </th>
                         </tr>
                         <tr>
-                            <th><p>Slug:</p></th>
+                            <th style={{textAlign:'left'}}>Slug:</th>
                             <th>
                                 <input className={`${inputTextStyle}`}
                                     onChange={e => action(() => props.article.slug = e.target.value)()} 
@@ -61,6 +63,7 @@ const Writer = observer((props) => {
                     >
                 </textarea>
             </form>
+            <Uploader/>
         </div>
     )
 })
@@ -78,6 +81,6 @@ let inputTextStyle = glamor.style({
 let textAreaStyle = glamor.style({
     display: 'block',
     width: '100%',
-    height: '90vh',
+    height: '88vh',
     resize: 'none',
 })

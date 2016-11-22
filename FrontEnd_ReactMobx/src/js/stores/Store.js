@@ -74,7 +74,7 @@ export default class Store {
                 body: JSON.stringify({email: email, password: password})})
             .then(action(response => {
                 if (response.status >= 400) {
-                    throw newError(response.statusText)
+                    throw new Error(response.statusText)
                 }
                 return response.json()
             }))

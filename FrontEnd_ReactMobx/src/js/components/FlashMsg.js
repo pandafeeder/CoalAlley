@@ -36,6 +36,7 @@ cate.danger = glamor.style({
 
 let containerStyle = glamor.style({
     display: 'flex',
+    zIndex: 1000,
     justifyContent: 'center',
     alignItems: 'center',
     position: 'fixed',

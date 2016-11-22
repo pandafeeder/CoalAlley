@@ -49,6 +49,7 @@ const Article = observer(class Article extends Component {
                                     style={{backgroundColor: 'orangered', marginRight:'10px'}}
                                     onClick={
                                     e => {
+                                        e.preventDefault()
                                         this.showConfirm()
                                     }
                                 }>DELETE</a>

@@ -1,13 +1,20 @@
 import React from 'react'
+import { flasher } from '../stores'
+import { observer } from 'mobx-react'
 const glamor = require('glamor')
 
-const Login = (props) => {
-    let nameInput
+const Login = observer((props) => {
+    let emailInput
     let pswdInput 
     const submitHandler = e => {
         e.preventDefault()
-        props.store.getToken(nameInput.value, pswdInput.value)
-        props.closeLoginFunc()
+        let emailReg = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+        if (emailReg.test(emailInput.value) && pswdInput.value.length >= 6) {
+            props.store.getToken(emailInput.value, pswdInput.value)
+            props.closeLoginFunc()
+        } else {
+            flasher.flash('Invalid email or password', 'danger')
+        }
     }
     return(
         <div className={`${containerStyle}`} style={props.show ? null : {display: 'none'}}>
@@ -17,7 +24,9 @@ const Login = (props) => {
                     <tbody>
                     <tr>
                         <td style={{width: '20%'}}><label for="email">Email:</label></td>
-                        <td style={{width: '60%'}}><input className={`${inputStyle}`} name="email" type="text" ref={ref => nameInput=ref}/></td>
+                        <td style={{width: '60%'}}>
+                            <input {...inputStyle} name="email" type="text" ref={ref => emailInput=ref}/>
+                        </td>
                         <td style={{width: '20%', textAlign: 'center', verticalAlign: 'middle'}} rowSpan='2'>
                             <button type="submit" className={`${submitStyle}`}>
                                 <i style={{fontSize: '40px'}} className="fa fa-send-o"></i>
@@ -33,7 +42,7 @@ const Login = (props) => {
             </form>
         </div>
     )
-}
+})
 
 export default Login
 
@@ -69,6 +78,7 @@ let tableStyle = glamor.style({
     transform: 'translateY(-50%)',
 })
 let closeBtn = glamor.style({
+    cursor: 'pointer',
     position: 'absolute',
     right: -15,
     top: -15,
@@ -84,6 +94,8 @@ let inputStyle = glamor.style({
     marginBottom: '10px',
     padding: '0px 5px 0px 5px',
     outlineStyle: 'none',
+})
+let inputFocus = glamor.style({
     ':focus': {
         backgroundColor: 'steelblue'
     }
