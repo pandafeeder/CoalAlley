@@ -88,7 +88,7 @@ let h1Style = glamor.style({
     textIndent: '2rem',
     display: 'inline-block',
     lineHeight: '3rem',
-    fontSize: '1.8rem',
+    fontSize: '2rem',
     marginBottom: '20px'
 })
 let editanddeleteStyle = glamor.style({

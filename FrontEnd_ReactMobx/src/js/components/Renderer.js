@@ -13,7 +13,7 @@ const Renderer = observer((props) => {
     return(
         <div className={`${containerStyle}`}>
             <h1 className={`${h1Style}`}>{props.article.title}</h1>
-            <div
+            <div className='article-content'
             dangerouslySetInnerHTML={{__html: converter.makeHtml(props.article.content)}}/>
         </div>
     )

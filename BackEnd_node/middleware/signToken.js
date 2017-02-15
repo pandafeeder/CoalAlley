@@ -5,7 +5,11 @@ const uuid = require('node-uuid')
 const bcrypt = require('bcryptjs')
 
 //safer, but when thread is dead, this will make all token verifying fail, need user to reauthenticate
-const secretKey = uuid.v4()
+//const secretKey = uuid.v4()
+
+//since running multi docker containers for this, every container will have a different secretKey
+//using above method, use hard-coding instead
+const secretKey = 'changme'
 
 function signToken(req, res, next) {
     User.findOne({'email': req.body.email}, (err, user) => {

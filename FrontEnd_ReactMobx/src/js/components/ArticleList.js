@@ -34,13 +34,10 @@ let containerStyle = glamor.style({
 
 let aStyle = glamor.style({
     display: 'block',
-    padding: '5px',
+    padding: '10px 5px 10px 5px',
     ':hover': {
         backgroundColor: '#DCDCDC',
         boxShadow: '0 2px 2px 0 rgba(0,0,0,0.2)'
-    },
-    ':first-child': {
-        paddingTop: '10px'
     },
     ':active': {
         transform: 'translateY(3px)'

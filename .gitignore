@@ -5,3 +5,17 @@ FrontEnd/node_modules/
 FrontEnd/coverage/
 FrontEnd/test_out/
 FrontEnd/dist/
+FrontEnd_React/
+FrontEnd_reconstruct/
+
+node_modules
+build
+db
+db1
+db2
+db3
+uploads
+
+.DS_Store
+.env
+npm-debug.log

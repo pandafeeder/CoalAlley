@@ -7,7 +7,7 @@ const urlencodedParser = bodyParser.urlencoded({extended: false})
 const jsonParser = bodyParser.json()
 
 api.get('/articles', (req, res) => {
-    Article.find({}, (err, articles) => {
+    Article.find({}, null, {sort: {created: -1}}, (err, articles) => {
         if (err) {
             res.sendStatus(500)
         }
