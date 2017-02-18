@@ -1,5 +1,6 @@
 *.pyc
 *.swp
+*_vps*
 database
 FrontEnd/node_modules/
 FrontEnd/coverage/
