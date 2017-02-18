@@ -3,6 +3,7 @@
 *_vps*
 *_localM*
 database
+media
 FrontEnd/node_modules/
 FrontEnd/coverage/
 FrontEnd/test_out/
