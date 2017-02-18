@@ -12,6 +12,7 @@ FrontEnd_React/
 FrontEnd_reconstruct/
 
 node_modules
+BackEnd/build
 db
 db1
 db2
