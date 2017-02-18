@@ -62,7 +62,7 @@ const Article = observer(class Article extends Component {
                         :   <span></span>
                     }
                     <div className='article-content' style={{clear: 'right'}} dangerouslySetInnerHTML={{__html: converter.makeHtml(`${this.props.article.content}`)}}/>
-                    <div style={{marginTop: '2em'}}>{(new Date(this.props.article.created)).toGMTString()}</div>
+                    <div style={{marginTop: '2em'}}>{(new Date(this.props.article.created)).toLocaleDateString()}</div>
                 </div>
             )
         }
