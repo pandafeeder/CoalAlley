@@ -6,7 +6,7 @@ const path = require('path')
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, path.join(process.cwd(), 'uploads'))
+        cb(null, path.join(process.cwd(), '../FrontEnd_ReactMobx/media'))
     }, 
     filename: (req, file, cb) => {
         cb(null, file.originalname)
